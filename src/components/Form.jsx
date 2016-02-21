@@ -2,16 +2,25 @@ import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
-import actionCreators from '../action-creators.js'
+import actionCreators from '../action-creators'
 
 
 export class Form extends Component {
 
-
+  shootWord(e){
+    e.preventDefault()
+    const pewpew = this.refs.pewpew.value
+    console.log(pewpew)
+    this.refs.pewpew.value = ''
+  }
   render() {
 
     return(
-      <div></div>
+      <div>
+        <form autoComplete="off" className="turret" onSubmit={this.shootWord.bind(this)}>
+           <input id="gun" ref="pewpew" placeholder="Shoot shit"></input>
+         </form>
+      </div>
     )
   }
 }

@@ -9,7 +9,7 @@ export class Cell extends Component {
   }
   render() {
     return(
-      <div></div>
+      <div>Cell</div>
     )
   }
 }

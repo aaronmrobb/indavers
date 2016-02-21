@@ -2,16 +2,21 @@ import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
-import Row from './Row.jsx'
-
+import { Row } from './Row'
+import { FormContainer } from './Form'
 export class Game extends Component {
 
 
   render() {
-
+    const rows = <Row />
     return(
-      <div>
-
+      <div className="container">
+        Game
+        <div className="board">
+          Board
+          { rows }
+        </div>
+        <FormContainer />
       </div>
     )
   }
