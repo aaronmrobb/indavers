@@ -4,7 +4,9 @@
   "description": "Invaders of the immutable text variety.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "webpack -p",
+    "start": "webpack-dev-server",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'"
   },
   "repository": {
     "type": "git",
