@@ -1,6 +1,10 @@
-import { Map, List } from 'immutable'
+import { fromJS } from 'immutable'
 
-const initialGame = Map({
-  score: 0,
-  playing: false
+const initialGame = fromJS({
+  board: new Array(8).fill(' ').map(c => new Array(5).fill('')),
+  playing: false,
+  gameover: false,
+  score: 0
 })
+
+export default initialGame

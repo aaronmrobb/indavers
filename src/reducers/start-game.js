@@ -1,5 +1,5 @@
 function startGame(state) {
-  return state
+  return state.set('playing', true)
 }
 
 export default startGame

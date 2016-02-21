@@ -1,4 +1,4 @@
-function shootWord(state) {
+function shootWord(state, word) {
   return state
 }
 
