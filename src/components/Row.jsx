@@ -9,10 +9,11 @@ export class Row extends Component {
     super(props)
   }
   render() {
-    const cells = <Cell />
+    const cells = this.props.cells.map((cell, idx) => {
+      return <Cell content={cell} key={idx} />
+    })
     return(
       <div>
-        Row
         {cells}
       </div>
     )
