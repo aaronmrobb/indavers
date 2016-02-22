@@ -18,5 +18,7 @@ function checkForLoss(state) {
   const lost = state.get('board').last().filter((i) => {
     return i.length > 0
   })
-  return lost.size > 0 ? state.set('board', state.get('board').pop()).set('gameover', true) : state.set('board', state.get('board').pop())
+  return lost.size > 0 ?
+  state.set('board', state.get('board').pop()).set('gameover', true) :
+  state.set('board', state.get('board').pop())
 }

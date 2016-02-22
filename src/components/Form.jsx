@@ -9,8 +9,7 @@ export class Form extends Component {
 
   shootWord(e){
     e.preventDefault()
-    const pewpew = this.refs.pewpew.value
-    console.log(pewpew)
+    this.props.shootWord(this.refs.pewpew.value)
     this.refs.pewpew.value = ''
   }
   render() {

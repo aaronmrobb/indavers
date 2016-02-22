@@ -1,5 +1,19 @@
-function shootWord(state, word) {
-  return state
+import { List } from 'immutable'
+
+export default function shootWord(state, word) {
+  const coordinates = findWord(state, word)
+  const newState = coordinates ? state.setIn(['board', coordinates.get(0), coordinates.get(1)], '') : state
+  return newState
 }
 
-export default shootWord
+function findWord(state, word) {
+  let coordinates
+  const filteredBoard = state.set('board', state.get('board').map((row, rIndex) => {
+    row.map((cell, cIndex) => {
+      if (word === cell) {
+        coordinates = List.of(rIndex, cIndex)
+      }
+    })
+  }))
+  return coordinates
+}
