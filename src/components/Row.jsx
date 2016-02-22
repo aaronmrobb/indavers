@@ -13,7 +13,7 @@ export class Row extends Component {
       return <Cell content={cell} key={idx} />
     })
     return(
-      <div className="row">
+      <div className="row"  style={{opacity: this.props.gameover ? 0.3 : 1}}>
         {cells}
       </div>
     )

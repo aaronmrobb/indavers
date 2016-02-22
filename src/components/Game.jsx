@@ -22,11 +22,11 @@ export class Game extends Component {
   }
   render() {
     const rows = this.props.board.map((row, idx) => {
-      return <Row cells={row} key={idx}/>
+      return <Row cells={row} key={idx} gameover={this.props.gameover}/>
     })
     return(
       <div className="board-container">
-        <div className="board" style={{opacity: this.props.gameover ? 0.5 : 1}}>
+        <div className="board">
           { rows }
         </div>
         <FormContainer gameover={this.props.gameover}/>
