@@ -17,8 +17,8 @@ export class Game extends Component {
   }
   handleStart(e) {
     e.preventDefault()
-    document.getElementById('gun').focus()
     this.props.startGame()
+    document.getElementById('gun').focus()
   }
   render() {
     const rows = this.props.board.map((row, idx) => {
