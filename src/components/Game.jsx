@@ -26,7 +26,7 @@ export class Game extends Component {
     })
     return(
       <div className="board-container">
-        <div className="board">
+        <div className="board" style={{opacity: this.props.gameover ? 0.5 : 1}}>
           { rows }
         </div>
         <FormContainer />

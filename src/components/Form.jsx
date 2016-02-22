@@ -15,11 +15,9 @@ export class Form extends Component {
   render() {
 
     return(
-      <div>
-        <form autoComplete="off" className="turret" onSubmit={this.shootWord.bind(this)}>
-           <input disabled={this.props.gameover}  id="gun" ref="pewpew" placeholder="Shoot shit"></input>
-         </form>
-      </div>
+      <form autoComplete="off" className="turret" onSubmit={this.shootWord.bind(this)}>
+         <input disabled={this.props.gameover}  id="gun" ref="pewpew" placeholder="Shoot shit"></input>
+      </form>
     )
   }
 }

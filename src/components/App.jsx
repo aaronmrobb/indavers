@@ -12,6 +12,7 @@ export class App extends Component {
 
     return(
       <div className="container">
+        <h1 className="site-title">Text Invaders</h1>
         <GameContainer />
       </div>
     )
