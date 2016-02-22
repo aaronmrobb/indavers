@@ -2,8 +2,7 @@ import { List } from 'immutable'
 
 export default function shootWord(state, word) {
   const coordinates = findWord(state, word)
-  const newState = coordinates ? state.setIn(['board', coordinates.get(0), coordinates.get(1)], '') : state
-  return newState
+  return coordinates ? state.setIn(['board', coordinates.get(0), coordinates.get(1)], '') : state
 }
 
 function findWord(state, word) {

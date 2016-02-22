@@ -17,7 +17,7 @@ export class Form extends Component {
     return(
       <div>
         <form autoComplete="off" className="turret" onSubmit={this.shootWord.bind(this)}>
-           <input id="gun" ref="pewpew" placeholder="Shoot shit"></input>
+           <input disabled={this.props.gameover}  id="gun" ref="pewpew" placeholder="Shoot shit"></input>
          </form>
       </div>
     )
@@ -28,7 +28,7 @@ reactMixin(Form.prototype, PureRenderMixin)
 
 function mapStateToProps(state) {
   return {
-
+    gameover: state.get('gameover')
   }
 }
 

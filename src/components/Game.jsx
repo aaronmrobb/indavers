@@ -15,19 +15,24 @@ export class Game extends Component {
       this.interval = undefined
     }
   }
+  handleStart(e) {
+    e.preventDefault()
+    document.getElementById('gun').focus()
+    this.props.startGame()
+  }
   render() {
     const rows = this.props.board.map((row, idx) => {
       return <Row cells={row} key={idx}/>
     })
     return(
-      <div className="container">
+      <div className="board-container">
         <div className="board">
           { rows }
         </div>
         <FormContainer />
         <div id="status-message" style={{display: this.props.gameover || !this.props.playing ? 'block' : 'none'}}>
           <h3>{this.props.gameover ? 'Gameover Sucka' : 'Keyup brochacho'}</h3>
-          <button onClick={this.props.startGame}>{this.props.gameover ? 'Replay' : 'Play'}</button>
+          <button onClick={this.handleStart.bind(this)}>{this.props.gameover ? 'Replay' : 'Play'}</button>
         </div>
       </div>
     )
