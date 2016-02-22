@@ -4,7 +4,6 @@ import next from './reducers/next'
 import initialGame from './data/initial-game'
 
 export default function(state = initialGame, action) {
-  console.log(action)
   switch(action.type) {
     case 'START_GAME':
       return startGame(state)

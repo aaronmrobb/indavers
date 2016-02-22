@@ -10,6 +10,9 @@ export class Game extends Component {
   componentDidUpdate() {
     if(!this.interval && this.props.playing) {
       this.interval = setInterval(this.props.next, 2000)
+    } else if (this.props.gameover){
+      clearInterval(this.interval)
+      this.interval = undefined
     }
   }
   render() {
@@ -35,6 +38,7 @@ reactMixin(Game.prototype, PureRenderMixin)
 
 function mapStateToProps(state) {
   return {
+    gameover: state.get('gameover'),
     board: state.get('board'),
     playing: state.get('playing')
   }
