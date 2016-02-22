@@ -29,7 +29,7 @@ export class Game extends Component {
         <div className="board" style={{opacity: this.props.gameover ? 0.5 : 1}}>
           { rows }
         </div>
-        <FormContainer />
+        <FormContainer gameover={this.props.gameover}/>
         <div id="status-message" style={{display: this.props.gameover || !this.props.playing ? 'block' : 'none'}}>
           <h3>{this.props.gameover ? 'Gameover' : 'New Game'}</h3>
           <button onClick={this.handleStart.bind(this)}>{this.props.gameover ? 'Replay' : 'Play'}</button>

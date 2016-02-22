@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 @import url(https://fonts.googleapis.com/css?family=Audiowide);
 body {
-
+  background-color: black;
 }
 
 .board-container{
@@ -46,8 +46,17 @@ body {
 }
 .site-title {
   text-align: center;
+  font-size: 4rem;
   font-family: 'Audiowide';
   text-transform:uppercase;
+  color: rgb(46, 204, 113);
+  text-shadow: 0 1px 0 rgb(39, 174, 96),
+   0 2px 0 rgb(36, 171, 93) ,
+   0 3px 0 rgb(21, 156, 172) ,
+   0 4px 0 rgb(18, 153, 169) ,
+   0 5px 0 rgb(3 , 138, 154)
+
+
 }
 #status-message {
   font-family: 'Audiowide';

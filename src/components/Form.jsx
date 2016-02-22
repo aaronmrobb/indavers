@@ -24,10 +24,5 @@ export class Form extends Component {
 
 reactMixin(Form.prototype, PureRenderMixin)
 
-function mapStateToProps(state) {
-  return {
-    gameover: state.get('gameover')
-  }
-}
 
-export const FormContainer = connect(mapStateToProps, actionCreators)(Form)
+export const FormContainer = connect(undefined, actionCreators)(Form)
