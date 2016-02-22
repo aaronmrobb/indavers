@@ -4,6 +4,14 @@ body {
   background-color: black;
 }
 
+@mixin three-d-text($r, $g, $b) {
+  text-shadow: 0 1px 0 rgb($r, $g, $b),
+   0 2px 0 rgb($r - 3, $g - 3, $b - 3) ,
+   0 3px 0 rgb($r - 18, $g - 18, $b - 18) ,
+   0 4px 0 rgb($r - 21, $g - 21, $b - 21) ,
+   0 5px 0 rgb($r - 36, $g - 36, $b - 36);
+}
+
 .board-container{
   position: relative;
   width: 600px;
@@ -26,6 +34,7 @@ body {
         width: 20%;
         color: white;
         float: left;
+
       }
     }
   }
@@ -63,13 +72,9 @@ body {
 
 }
 #status-message {
+  @include three-d-text(39, 174, 96)
   font-size: 2rem;
   color: rgb(46, 204, 113);
-  text-shadow: 0 1px 0 rgb(39, 174, 96),
-   0 2px 0 rgb(36, 171, 93) ,
-   0 3px 0 rgb(21, 156, 172) ,
-   0 4px 0 rgb(18, 153, 169) ,
-   0 5px 0 rgb(3 , 138, 154);
   font-family: 'Audiowide';
   position: absolute;
   width: 100%;
