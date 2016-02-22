@@ -1,5 +1,7 @@
+import initialGame from '../data/initial-game'
+
 function startGame(state) {
-  return state.set('playing', true)
+  return initialGame.set('playing', true)
 }
 
 export default startGame
