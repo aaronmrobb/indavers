@@ -13,7 +13,7 @@ export class Row extends Component {
       return <Cell content={cell} key={idx} />
     })
     return(
-      <div>
+      <div className="row">
         {cells}
       </div>
     )

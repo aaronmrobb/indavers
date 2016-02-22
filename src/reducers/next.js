@@ -2,14 +2,19 @@ import randomWords from 'random-words'
 import { fromJS } from 'immutable'
 
 export default function next(state) {
-  console.log('next')
   return addWordRow(state)
 }
 
 function addWordRow(state) {
-  return checkForLoss(state)
+  const nextState = state.set('board', state.get('board').unshift(
+    fromJS(new Array(5).fill('').map((cell) => {
+          return Math.random() > 0.5 ? '' : randomWords()
+    }))
+  ))
+  return checkForLoss(nextState)
 }
 
 function checkForLoss(state) {
-  return state
+  const lost = state.get('board').last().
+  return   state.set('board', state.get('board').pop())
 }

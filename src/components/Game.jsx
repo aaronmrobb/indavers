@@ -19,7 +19,6 @@ export class Game extends Component {
     return(
       <div className="container">
         <div className="board">
-          Board
           { rows }
         </div>
         <FormContainer />
