@@ -31,7 +31,7 @@ export class Game extends Component {
         </div>
         <FormContainer />
         <div id="status-message" style={{display: this.props.gameover || !this.props.playing ? 'block' : 'none'}}>
-          <h3>{this.props.gameover ? 'Gameover Sucka' : 'Keyup brochacho'}</h3>
+          <h3>{this.props.gameover ? 'Gameover' : 'New Game'}</h3>
           <button onClick={this.handleStart.bind(this)}>{this.props.gameover ? 'Replay' : 'Play'}</button>
         </div>
       </div>

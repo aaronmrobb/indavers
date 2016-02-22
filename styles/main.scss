@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+body {
+
+}
+
 .board-container{
   position: relative;
   width: 600px;
@@ -40,11 +46,15 @@
 }
 .site-title {
   text-align: center;
+  font-family: 'Audiowide';
+  text-transform:uppercase;
 }
 #status-message {
+  font-family: 'Audiowide';
   position: absolute;
   width: 100%;
   display: inline-block;
   top: 150px;
   text-align: center;
+  text-transform: uppercase;
 }
