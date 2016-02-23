@@ -62,14 +62,21 @@ body {
       .cell {
         font-family: 'Ropa Sans';
         text-transform: uppercase;
-        height: 55px;
-        line-height: 55px;
+        height: 75px;
+        line-height: 70px;
         text-align: center;
+        font-size: .8rem;
+        text-shadow: 1px 1px 1px black;
         display: inline-block;
         width: 20%;
         color: white;
         float: left;
-
+      }
+      .invader {
+        background-image:url('/img/invader1.png');
+        background-size: 85%;
+        background-position: center center;
+        background-repeat: no-repeat;
       }
     }
   }
