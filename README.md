@@ -1,2 +1,8 @@
 # Invaders
-Invaders of the immutable text variety.
+Space Invaders inspired typing skills game.
+
+##Stack
+- Imuttable
+- React
+- Redux
+- Webpack
