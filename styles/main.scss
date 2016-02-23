@@ -1,10 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Audiowide);
 @import url(https://fonts.googleapis.com/css?family=Ropa+Sans);
 
-body {
-  background-color: black;
-}
-
 @mixin three-d-text($r, $g, $b) {
   text-shadow: 0 1px 0 rgb($r, $g, $b),
    0 2px 0 rgb($r - 3, $g - 3, $b - 3) ,
@@ -12,6 +8,22 @@ body {
    0 4px 0 rgb($r - 21, $g - 21, $b - 21) ,
    0 5px 0 rgb($r - 36, $g - 36, $b - 36);
 }
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+
+
+body {
+  background-color: black;
+
+}
+
+
 
 .board-container{
   position: relative;
@@ -45,6 +57,11 @@ body {
     width: 100%;
     float: left;
     border: 5px solid rgb(46, 204, 113);
+    @include placeholder {
+        color: white;
+        font-weight:100;
+        opacity: .8;
+    }
     input {
       font-family: 'Ropa Sans';
       text-transform: uppercase;
@@ -82,10 +99,27 @@ body {
   position: absolute;
   width: 100%;
   display: inline-block;
-  top: 135px;
+  top: 115px;
   text-align: center;
   text-transform: uppercase;
   h3 {
     margin-bottom: 0;
+  }
+  button {
+    font-family: 'Audiowide';
+    margin: 15px;
+    text-transform: uppercase;
+    background: transparent;
+    color: white;
+    padding: 5px 25px;
+    font-size: 1.5rem;
+    border: 3px solid rgb(46, 204, 113);
+    box-shadow: none;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active, &:focus {
+      outline: none;
+    }
   }
 }
