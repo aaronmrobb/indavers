@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Audiowide);
 @import url(https://fonts.googleapis.com/css?family=Ropa+Sans);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 
 @mixin three-d-text($r, $g, $b) {
   text-shadow: 0 1px 0 rgb($r, $g, $b),
@@ -61,6 +62,7 @@ body {
       width: 100%;
       .cell {
         font-family: 'Ropa Sans';
+        font-weight: bold;
         text-transform: uppercase;
         height: 75px;
         line-height: 70px;
@@ -114,7 +116,7 @@ body {
 .site-title {
   @include three-d-text(39, 174, 190)
   text-align: center;
-  margin: 10px;
+  margin: 5px;
   font-size: 4rem;
   font-family: 'Audiowide';
   text-transform:uppercase;

@@ -3,6 +3,7 @@ import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import { Row } from './Row'
+import { Status } from './Status'
 import { FormContainer } from './Form'
 import * as actionCreators from '../action-creators'
 
@@ -30,11 +31,8 @@ export class Game extends Component {
           { rows }
         </div>
         <FormContainer gameover={this.props.gameover}/>
-        <div id="status-message" style={{display: this.props.gameover || !this.props.playing ? 'block' : 'none'}}>
-          <h3>{this.props.gameover ? 'Gameover' : 'New Game'}</h3>
-          <h4 style={{display: this.props.gameover ? 'block' : 'none'}}>Score: {this.props.score}</h4>
-          <button onClick={this.handleStart.bind(this)}>{this.props.gameover ? 'Replay' : 'Play'}</button>
-        </div>
+        <Status gameover={this.props.gameover} score={this.props.score}
+          playing={this.props.playing} handleStart={this.handleStart.bind(this)}/>
       </div>
     )
   }
