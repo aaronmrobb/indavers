@@ -32,6 +32,7 @@ export class Game extends Component {
         <FormContainer gameover={this.props.gameover}/>
         <div id="status-message" style={{display: this.props.gameover || !this.props.playing ? 'block' : 'none'}}>
           <h3>{this.props.gameover ? 'Gameover' : 'New Game'}</h3>
+          <h4 style={{display: this.props.gameover ? 'block' : 'none'}}>Score: {this.props.score}</h4>
           <button onClick={this.handleStart.bind(this)}>{this.props.gameover ? 'Replay' : 'Play'}</button>
         </div>
       </div>
@@ -43,6 +44,7 @@ reactMixin(Game.prototype, PureRenderMixin)
 
 function mapStateToProps(state) {
   return {
+    score: state.get('score'),
     gameover: state.get('gameover'),
     board: state.get('board'),
     playing: state.get('playing')

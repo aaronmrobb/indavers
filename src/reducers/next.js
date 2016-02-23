@@ -8,15 +8,20 @@ export default function next(state) {
 function addWordRow(state) {
   const nextState = state.set('board', state.get('board').unshift(
     fromJS(new Array(5).fill('').map((cell) => {
-      let newInvader = 'new blank word'
-      while(newInvader.length > 7) {
-        newInvader = randomWords()
-      }
-      return Math.random() > 0.4 ? '' : newInvader
+      return Math.random() > 0.4 ? '' : generateWord()
     }))
   ))
   return checkForLoss(nextState)
 }
+
+function generateWord() {
+  let newWord = 'new blank word'
+  while(newWord.length > 6) {
+    newWord = randomWords()
+  }
+  return newWord
+}
+
 
 function checkForLoss(state) {
   const lost = state.get('board').last().filter((i) => {
