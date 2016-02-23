@@ -7,6 +7,26 @@
    0 3px 0 rgb($r - 18, $g - 18, $b - 18) ,
    0 4px 0 rgb($r - 21, $g - 21, $b - 21) ,
    0 5px 0 rgb($r - 36, $g - 36, $b - 36);
+
+}
+@mixin three-d-text-hover ($r, $g, $b) {
+  text-shadow: 0 1px 0 rgb($r, $g, $b),
+   0 2px 0 rgb($r - 3, $g - 3, $b - 3) ,
+   0 3px 0 rgb($r - 18, $g - 18, $b - 18) ,
+   0 4px 0 rgb($r - 21, $g - 21, $b - 21) ,
+   0 5px 0 rgb($r - 36, $g - 36, $b - 36),
+   0 6px 1px rgba($r - 36, $g - 36, $b - 36, 0.0980392) ,
+   0 0 5px rgba($r - 36, $g - 36, $b - 36, 0.0980392) ,
+   0 1px 10px rgba($r - 36, $g - 36, $b - 36, 0.298039) ,
+   0 3px 15px rgba($r - 36, $g - 36, $b - 36, 0.2) ,
+   0 5px 20px rgba($r - 36, $g - 36, $b - 36, 0.247059) ,
+   0 10px 20px rgba($r - 36, $g - 36, $b - 36, 0.2) ,
+   0 20px 20px rgba($r - 36, $g - 36, $b - 36, 0.14902),
+   0 40px 40px rgba($r - 36, $g - 36, $b - 36, 0.0702)  ;
+   -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+   -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+   -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+   transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 @mixin placeholder {
@@ -42,14 +62,20 @@ body {
       .cell {
         font-family: 'Ropa Sans';
         text-transform: uppercase;
-        height: 50px;
-        line-height: 50px;
+        height: 75px;
+        line-height: 70px;
         text-align: center;
+        font-size: 1rem;
         display: inline-block;
         width: 20%;
-        color: white;
+        color: black;
         float: left;
-
+      }
+      .invader {
+        background-image:url('/img/invader1.png');
+        background-size: 85%;
+        background-position: center center;
+        background-repeat: no-repeat;
       }
     }
   }
@@ -88,8 +114,9 @@ body {
   font-family: 'Audiowide';
   text-transform:uppercase;
   color: rgb(46, 204, 113);
-
-
+  &:hover {
+    @include three-d-text-hover(39, 174, 190)
+  }
 }
 #status-message {
   @include three-d-text(39, 174, 190)
@@ -110,13 +137,14 @@ body {
     margin: 15px;
     text-transform: uppercase;
     background: transparent;
-    color: white;
+    color: #2ecc71;
     padding: 5px 25px;
     font-size: 1.5rem;
     border: 3px solid rgb(46, 204, 113);
     box-shadow: none;
     &:hover {
       cursor: pointer;
+      color: white;
     }
     &:active, &:focus {
       outline: none;
