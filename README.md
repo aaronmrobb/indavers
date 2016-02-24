@@ -6,3 +6,4 @@ Space Invaders inspired typing skills game.
 - React
 - Redux
 - Webpack
+- Mocha / Chai / Enzyme
