@@ -20,3 +20,7 @@ function findWord(state, word) {
   }))
   return coordinates
 }
+
+function checkShotPath(state, coordinates) {
+  return true
+}
