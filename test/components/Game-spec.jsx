@@ -7,3 +7,7 @@ chai.use(chaiEnzyme())
 
 import { mount, render, shallow } from 'enzyme'
 import { Game } from '../../src/components/Game.jsx'
+
+describe('<Game />', () => {
+  it('has stuff')
+})

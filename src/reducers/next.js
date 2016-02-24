@@ -1,9 +1,10 @@
 import randomWords from 'random-words'
 import { fromJS } from 'immutable'
 
-export default function next(state) {
+function next(state) {
   return addWordRow(state)
 }
+export default next
 
 function addWordRow(state) {
   const nextState = state.set('board', state.get('board').unshift(

@@ -7,3 +7,7 @@ chai.use(chaiEnzyme())
 
 import { mount, render, shallow } from 'enzyme'
 import { App } from '../../src/components/App.jsx'
+
+describe('<App />', () => {
+  it('')
+})
