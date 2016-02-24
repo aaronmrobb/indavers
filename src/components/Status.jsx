@@ -9,9 +9,9 @@ export class Status extends Component {
   }
   render() {
     return(
-      <div id="status-message" style={{display: this.props.gameover || !this.props.playing ? 'block' : 'none'}}>
+      <div className="status-message" style={{display: this.props.gameover || !this.props.playing ? 'block' : 'none'}}>
         <h3>{this.props.gameover ? 'Gameover' : 'New Game'}</h3>
-        <h4 style={{display: this.props.gameover ? 'block' : 'none'}}>Score: {this.props.score}</h4>
+        <h4 className="score" style={{display: this.props.gameover ? 'block' : 'none'}}>Score: {this.props.score}</h4>
         <button onClick={this.props.handleStart}>{this.props.gameover ? 'Replay' : 'Play'}</button>
       </div>
     )
