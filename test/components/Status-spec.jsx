@@ -37,5 +37,4 @@ describe('<Status />', () => {
     const wrapper = shallow(<Status gameover={true} playing={false} score={1000}/>)
     expect(wrapper.find('.score')).to.have.text('Score: 1000')
   })
-  it('')
 })
