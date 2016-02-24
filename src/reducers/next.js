@@ -17,17 +17,13 @@ function addWordRow(state) {
 
 function generateWord() {
   let newWord = 'new blank word'
-  while(newWord.length > 6) {
-    newWord = randomWords()
-  }
+  while(newWord.length > 6) { newWord = randomWords() }
   return newWord
 }
 
 
 function checkForLoss(state) {
-  const lost = state.get('board').last().filter((i) => {
-    return i.length > 0
-  })
+  const lost = state.get('board').last().filter((i) => { return i.length > 0 })
   const nextState = state.set('board', state.get('board').pop())
   return lost.size > 0 ? nextState.set('gameover', true) : nextState
 }
