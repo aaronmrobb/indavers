@@ -6,3 +6,4 @@ import { Map } from 'immutable'
 chai.use(chaiEnzyme())
 
 import { mount, render, shallow } from 'enzyme'
+import { Game } from '../../src/components/Game.jsx'

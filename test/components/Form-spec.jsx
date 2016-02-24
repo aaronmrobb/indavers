@@ -6,3 +6,4 @@ import { Map } from 'immutable'
 chai.use(chaiEnzyme())
 
 import { mount, render, shallow } from 'enzyme'
+import { Form } from '../../src/components/Form.jsx'
