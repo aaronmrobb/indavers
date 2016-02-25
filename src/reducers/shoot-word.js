@@ -1,13 +1,11 @@
 import { List } from 'immutable'
 
-function shootWord(state, word) {
+export default function shootWord(state, word) {
   const coordinates = findWord(state, word.split(' ')[0].toLowerCase())
   const nextState = coordinates ? state.setIn(['board', coordinates.get(0), coordinates.get(1)], '')
       .set('score', state.get('score') + (word.length * 15)) : state
   return nextState
 }
-
-export default shootWord
 
 function findWord(state, word) {
   let coordinates

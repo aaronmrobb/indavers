@@ -1,10 +1,9 @@
 import randomWords from 'random-words'
 import { fromJS } from 'immutable'
 
-function next(state) {
+export default function next(state) {
   return addWordRow(state)
 }
-export default next
 
 function addWordRow(state) {
   const nextState = state.set('board', state.get('board').unshift(
@@ -17,7 +16,7 @@ function addWordRow(state) {
 
 function generateWord() {
   let newWord = 'new blank word'
-  while(newWord.length > 6) { newWord = randomWords() }
+  while(newWord.length > 6 || newWord.length < 4) { newWord = randomWords() }
   return newWord
 }
 
