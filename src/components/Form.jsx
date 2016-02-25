@@ -16,7 +16,7 @@ export class Form extends Component {
 
     return(
       <form autoComplete="off" className="turret" onSubmit={this.shootWord.bind(this)}>
-         <input disabled={this.props.gameover}  id="gun" ref="pewpew" placeholder="Shoot shit"></input>
+         <input disabled={this.props.gameover}  id="gun" ref="pewpew" placeholder="Just Shoot It"></input>
       </form>
     )
   }

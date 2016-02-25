@@ -22,7 +22,7 @@ describe('<Form />', () => {
   })
   it('input has placeholder text', () => {
     const wrapper = shallow(<Form />)
-    expect(wrapper.find('#gun')).to.have.attr('placeholder', 'Shoot shit')
+    expect(wrapper.find('#gun')).to.have.attr('placeholder', 'Just Shoot It')
 
   })
   it('is not disabled while game is being played', () => {
