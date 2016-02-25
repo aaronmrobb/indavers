@@ -1,23 +1,25 @@
 import randomWords from 'random-words'
-import { fromJS } from 'immutable'
+import { fromJS, List } from 'immutable'
 
 export default function next(state) {
   return addWordRow(state)
 }
 
 function addWordRow(state) {
-  const nextState = state.set('board', state.get('board').unshift(
-    fromJS(new Array(5).fill('').map((cell) => {
-      return Math.random() > 0.4 ? '' : generateWord()
-    }))
-  ))
+  const nextState = state.set('board', state.get('board').unshift(generateRow()))
   return checkForLoss(nextState)
 }
 
+function generateRow() {
+  let newRow = List.of('', '', '', '', '').map((cell) => {
+    return Math.random() > 0.4 ? '' : generateWord() })
+  const hasInvader = newRow.filter(cell => cell.length === 0).size !== 5
+  return  hasInvader ? newRow : generateRow()
+}
+
 function generateWord() {
-  let newWord = 'new blank word'
-  while(newWord.length > 6 || newWord.length < 4) { newWord = randomWords() }
-  return newWord
+  let newWord = randomWords()
+  return newWord.length > 6 || newWord.length < 3 ? generateWord() : newWord
 }
 
 

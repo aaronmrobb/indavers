@@ -10,9 +10,7 @@ export default function shootWord(state, word) {
 function findWord(state, word) {
   let coordinates
   const filteredBoard = state.set('board', state.get('board').map((row, rIndex) => {
-    row.map((cell, cIndex) => {
-      if (word === cell) coordinates = List.of(rIndex, cIndex)
-    })
+    row.map((cell, cIndex) => {if (word === cell) coordinates = List.of(rIndex, cIndex)})
   }))
   return coordinates
 }
