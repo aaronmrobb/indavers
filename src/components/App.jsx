@@ -3,7 +3,6 @@ import { GameContainer }from './Game'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
-import actionCreators from '../action-creators'
 
 export class App extends Component {
 
@@ -20,11 +19,3 @@ export class App extends Component {
 }
 
 reactMixin(App.prototype, PureRenderMixin)
-
-function mapStateToProps(state) {
-  return {
-
-  }
-}
-
-export const AppContainer = connect(mapStateToProps, actionCreators)(App)
