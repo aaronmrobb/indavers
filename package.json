@@ -4,7 +4,7 @@
   "description": "Invaders of the immutable text variety.",
   "main": "index.js",
   "scripts": {
-    "deploy": "webpack -p",
+    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "start": "webpack-dev-server",
     "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js 'test/**/*.@(js|jsx)'",
     "test:watch": "mocha --compilers js:babel-core/register --watch --require ./test/test-helper.js 'test/**/*.@(js|jsx)'"
@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "envify-loader": "^0.1.0",
     "immutable": "^3.7.6",
     "pure-render-decorator": "^0.2.0",
     "random-words": "0.0.1",
