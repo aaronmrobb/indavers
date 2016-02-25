@@ -43,5 +43,15 @@ describe('SHOOT_WORD', () => {
     expect(nextState.get('board').getIn([0, 1])).to.equal('')
 
   })
-  it('does not allow you to shoot words that have other words in column ahead of t')
+  it('does not allow you to shoot words that have other words in column ahead', () => {
+    const action = {
+      type: 'SHOOT_WORD',
+      word: 'bubba'
+    }
+    const firstWord = freshGame.set('board', freshGame.get('board').setIn([0, 0], 'bubba'))
+    const secondWord = firstWord.set('board', firstWord.get('board').setIn([1, 0], 'gubba'))
+    const nextState = reducer(secondWord, action)
+    expect(nextState.get('board').getIn([0, 0])).to.equal('bubba')
+    expect(nextState.get('board').getIn([1, 0])).to.equal('gubba')
+  })
 })
