@@ -13,7 +13,7 @@ function addWordRow(state) {
 function generateRow() {
   let newRow = List.of('', '', '', '', '').map((cell) => {
     return Math.random() > 0.4 ? '' : generateWord() })
-  const hasInvader = newRow.filter(cell => cell.length === 0).size !== 5
+  const hasInvader = newRow.filter(cell => cell.length === 0).size < 5
   return  hasInvader ? newRow : generateRow()
 }
 
