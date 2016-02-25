@@ -15,11 +15,11 @@ export class Game extends Component {
       clearInterval(this.interval)
       this.interval = undefined
     }
+    document.getElementById('gun').focus()
   }
   handleStart(e) {
     e.preventDefault()
     this.props.startGame()
-    document.getElementById('gun').focus()
   }
   render() {
     const rows = this.props.board.map((row, idx) => {
