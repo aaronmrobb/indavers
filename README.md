@@ -1,8 +1,8 @@
 # Invaders
-Space Invaders inspired typing skills game.
+Space Invaders inspired typing skills game. It's fun I promise.
 
 ##Stack
-- Imuttable
+- Immutable.js
 - React
 - Redux
 - Webpack
