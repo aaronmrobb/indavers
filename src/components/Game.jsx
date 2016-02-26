@@ -4,7 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import { Row } from './Row'
 import { Status } from './Status'
-import { FormContainer } from './Form'
+import { Form } from './Form'
 import * as actionCreators from '../action-creators'
 
 export class Game extends Component {
@@ -21,6 +21,9 @@ export class Game extends Component {
     e.preventDefault()
     this.props.startGame()
   }
+  shootWord(word){
+    this.props.shootWord(word)
+  }
   render() {
     const rows = this.props.board.map((row, idx) => {
       return <Row cells={row} key={idx} gameover={this.props.gameover}/>
@@ -30,7 +33,7 @@ export class Game extends Component {
         <div className="board">
           { rows }
         </div>
-        <FormContainer gameover={this.props.gameover}/>
+        <Form gameover={this.props.gameover} shootWord={this.shootWord.bind(this)}/>
         <Status gameover={this.props.gameover} score={this.props.score}
           playing={this.props.playing} handleStart={this.handleStart.bind(this)}/>
       </div>
