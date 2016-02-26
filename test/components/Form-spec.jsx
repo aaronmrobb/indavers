@@ -2,6 +2,7 @@ import React from 'react'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 import { Map } from 'immutable'
+import sinon from 'sinon'
 
 chai.use(chaiEnzyme())
 
@@ -32,5 +33,12 @@ describe('<Form />', () => {
   it('is disabled when game is over', () => {
     const wrapper = shallow(<Form gameover={true}/>)
     expect(wrapper.find('#gun')).to.have.attr('disabled')
+  })
+  it('fires at word on submit', () => {
+    const shootWord = sinon.spy();
+    const wrapper = mount(<Form shootWord={shootWord}/>)
+    wrapper.find('form').simulate('submit');
+    expect(shootWord.calledOnce).to.equal(true);
+
   })
 })

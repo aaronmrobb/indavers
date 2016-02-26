@@ -2,6 +2,7 @@ import React from 'react'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 import { Map } from 'immutable'
+import sinon from 'sinon'
 
 chai.use(chaiEnzyme())
 
@@ -36,5 +37,12 @@ describe('<Status />', () => {
   it('correct score is displayed', () => {
     const wrapper = shallow(<Status gameover={true} playing={false} score={1000}/>)
     expect(wrapper.find('.score')).to.have.text('Score: 1000')
+  })
+  it('button calls function when clicked', () => {
+    const handleStart = sinon.spy();
+    const wrapper = shallow(<Status gameover={false} playing={false} handleStart={handleStart} />)
+    wrapper.find('button').simulate('click');
+    expect(handleStart.calledOnce).to.equal(true);
+
   })
 })
